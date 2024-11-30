@@ -1,8 +1,8 @@
-Based on the description of the issue mentioned in the case (problem with a purchased Bluetooth speaker), the best category and subcategory from the provided JSON list would be:
+Given the content of your request mentioning a USB extension cable, the best fit for this case can be found under the "Electronics" category. Specifically, the subcategory that fits the description of your item, "USB extension cable," is "Computers & Tablets," since it involves computer accessories. Thus, your JSON selection for the category and subcategory would be:
 
 ```json
 {
-  "category": "Electronics",
-  "subcategory": "Audio & Headphones"
+  "Category": "Electronics",
+  "Subcategory": "Computers & Tablets"
 }
 ```

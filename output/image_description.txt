@@ -1,15 +1,21 @@
 {
-  "Description": "The image shows a modern, portable speaker with a sleek and contemporary design. The speaker has a dark metallic casing with rounded edges. It features a front mesh fabric that covers the sound projection area. On top of the speaker, there are four controls buttons indicating play/pause, volume up, volume down, and power. The most notable feature in the image is the severe damage on the front left side of the speaker. The mesh fabric is shattered or ripped outward, reminiscent of an explosion or force coming from inside, with pieces of the fabric and inner materials scattered outward onto a dark surface on which the speaker rests.",
+  "Description": "The image displays a close-up of a damaged USB cable and connector. The cable appears to extend smoothly into the background with artistic lighting highlighting its contours. The USB connector, which is the focal point, is notably damaged. Its metallic structure is partially shattered or frayed, exposing the interior components. The surrounding area is illuminated by a light source, creating a dramatic effect by enhancing the textures and lines of the damaged cable and connector.",
   "KeyElements": [
     {
-      "Element": "Shattered Mesh and Internal Material",
-      "Coordinates": {
-        "X": 250,
-        "Y": 480,
-        "Width": 120,
-        "Height": 120
-      },
-      "Confidence": 0.95
+      "Element": "The metallic structure of the USB connector is shattered or fractured exposing internal components.",
+      "Confidence": 0.95,
+      "X": 384,
+      "Y": 384,
+      "Width": 150,
+      "Height": 100
+    },
+    {
+      "Element": "The insulation near the connector shows signs of stress or potential tearing.",
+      "Confidence": 0.8,
+      "X": 384,
+      "Y": 450,
+      "Width": 180,
+      "Height": 50
     }
   ]
 }

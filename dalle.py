@@ -20,8 +20,9 @@ def generate_image():
     with open("./output/transcription.txt", "r") as file:
         transcription_text = file.read()
 
-    prompt = "Realistic photo showing very accurately the defects described in a complain. The complaint is the following: " + transcription_text
-    print(prompt)
+    prompt = "Read this complaint:" + transcription_text + """Figure out the key aspect of the complaint to show in a picture, and
+                create a highly detailed professional shot of the products and their defects mentioned in the complaint.
+                The photo shows the products in a close and frontal view with a shallow depth of field and harsh direct light"""
     
     # TODO: Call the DALL-E model to generate an image based on the prompt.
     dalle = create_openai_client(DALLE_VERSION, AZURE_OPENAI_API_KEY, AZURE_OPENAI_ENDPOINT)

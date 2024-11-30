@@ -33,18 +33,22 @@ def describe_image():
 
     # TODO: Call the model to describe the image and identify key elements.
     client = create_openai_client(GPT_VERSION, AZURE_OPENAI_API_KEY, AZURE_OPENAI_ENDPOINT)
-    prompt = """In JSON format without markdown syntax, describe the image thoroughly and put it in a field named 
-            Description. Then list problems in a list named KeyElements that are strictly tied to the complaint,
-            and for each element named Element add the coordinates in a list named Coordinates containing the values
-            for the value X, Y (centered very precisely on the defect), Width and Height of the rectange to draw and
-            centered in X, Y, along with a field to show the confidence named Confidence as a real number from 0
-            to 1 about that being an issue"""
+    prompt = """Take a step-by-step approach: 1) Evaluate the image to understand the objects you see
+                2) In JSON format without markdown syntax, creat a JSON Object
+                containing the following fields: "Description"
+                where you have to describe the image in detail; "KeyElements", an array of all product defects you see.
+                The objects contained in the "KeyElements" array have the
+                following attributes: "Element": the defect description, "Confidence": a real number from 0 to 1 about the
+                confidence you have for it to be a defect, "X": the X location of the center of the area containing
+                the defect in the image, "Y": "X": the Y location of the center of the area containing the defect
+                in the image, "Width": the width of the rectangle as a boundary box for the defect which is centered in (X,Y), "Height": The height
+                of the rectangle to draw as a boundary box for which is centered in (X,Y)"""
 
     try:
         response = client.chat.completions.create(
             model=GPT_DEPLOYMENT,
             messages=[
-                {"role": "system", "content": "You are a techincal expert and a helpful assistant."},
+                {"role": "system", "content": "You are a techincal expert."},
                 {
                     "role": "user",
                     "content": [
@@ -85,16 +89,24 @@ def annotate_image(image_path, json_path, output_path):
     # Itera sugli "elementi" nel file JSON (KeyElements)
     for element in data['KeyElements']:
         label = element['Element']
-        coordinates = element['Coordinates']
-        x, y, w, h = coordinates['X'], coordinates['Y'], coordinates['Width'], coordinates['Height']
+        x = element['X']
+        y = element['Y']
+        width = element['Width']
+        height = element['Height']
         confidence = element['Confidence']
 
-        # Disegna il riquadro attorno all'elemento
-        cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)  # Colore verde per il riquadro
+        # Calcola le coordinate x1, y1 (top-left) e x2, y2 (bottom-right) del rettangolo
+        x1 = int(x - width / 2)
+        y1 = int(y - height / 2)
+        x2 = int(x + width / 2)
+        y2 = int(y + height / 2)
+
+        # Disegna il riquadro attorno all'elemento usando le coordinate calcolate
+        cv2.rectangle(image, (x1, y1), (x2, y2), (0, 255, 0), 2)  # Colore verde per il riquadro
 
         # Aggiungi l'etichetta dell'elemento sopra il riquadro
         text = f"{label} ({confidence*100:.2f}%)"
-        cv2.putText(image, text, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
+        cv2.putText(image, text, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
     # Salva l'immagine annotata
     cv2.imwrite(output_path, image)
