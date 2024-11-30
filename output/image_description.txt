@@ -1,0 +1,15 @@
+{
+  "Description": "The image shows a modern, portable speaker with a sleek and contemporary design. The speaker has a dark metallic casing with rounded edges. It features a front mesh fabric that covers the sound projection area. On top of the speaker, there are four controls buttons indicating play/pause, volume up, volume down, and power. The most notable feature in the image is the severe damage on the front left side of the speaker. The mesh fabric is shattered or ripped outward, reminiscent of an explosion or force coming from inside, with pieces of the fabric and inner materials scattered outward onto a dark surface on which the speaker rests.",
+  "KeyElements": [
+    {
+      "Element": "Shattered Mesh and Internal Material",
+      "Coordinates": {
+        "X": 250,
+        "Y": 480,
+        "Width": 120,
+        "Height": 120
+      },
+      "Confidence": 0.95
+    }
+  ]
+}
