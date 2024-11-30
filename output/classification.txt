@@ -1,8 +1,8 @@
-Given the content of your request mentioning a USB extension cable, the best fit for this case can be found under the "Electronics" category. Specifically, the subcategory that fits the description of your item, "USB extension cable," is "Computers & Tablets," since it involves computer accessories. Thus, your JSON selection for the category and subcategory would be:
+Based on the information provided, where the issue is related to a cracked TV screen, the best category and subcategory for this case can be derived from the "Electronics" category, specifically targeting "TVs & Home Entertainment." Here is the selection in JSON format:
 
 ```json
 {
   "Category": "Electronics",
-  "Subcategory": "Computers & Tablets"
+  "Subcategory": "TVs & Home Entertainment"
 }
 ```

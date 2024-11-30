@@ -1,21 +1,13 @@
 {
-  "Description": "The image displays a close-up of a damaged USB cable and connector. The cable appears to extend smoothly into the background with artistic lighting highlighting its contours. The USB connector, which is the focal point, is notably damaged. Its metallic structure is partially shattered or frayed, exposing the interior components. The surrounding area is illuminated by a light source, creating a dramatic effect by enhancing the textures and lines of the damaged cable and connector.",
+  "Description": "The image displays a modern flat screen television placed on a wooden floor in a dimly lit room with ambient lighting predominantly from overhead light fixtures. The television screen has a large, prominent crack centered approximately in the middle, spreading out radially towards the edges, which looks like an impact mark. The background and setting suggest an indoor environment, possibly staged for demonstrating the damaged TV.",
   "KeyElements": [
     {
-      "Element": "The metallic structure of the USB connector is shattered or fractured exposing internal components.",
+      "Element": "Cracked screen with radial spread",
       "Confidence": 0.95,
       "X": 384,
       "Y": 384,
-      "Width": 150,
-      "Height": 100
-    },
-    {
-      "Element": "The insulation near the connector shows signs of stress or potential tearing.",
-      "Confidence": 0.8,
-      "X": 384,
-      "Y": 450,
-      "Width": 180,
-      "Height": 50
+      "Width": 550,
+      "Height": 550
     }
   ]
 }
